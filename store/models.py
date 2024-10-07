@@ -10,7 +10,8 @@ class Products(models.Model):
     image = models.ImageField(upload_to='uploads/products/')
     category = models.ForeignKey('Category', on_delete=models.CASCADE, default=1)
     video_url = models.CharField(max_length=500, default='', blank=True)
-    is_paid = models.BooleanField(default=False)
+    # if is_paid is True, the video url is unlocked
+    is_paid = models.BooleanField(default=False) 
 
     @staticmethod
     def get_all_products():
